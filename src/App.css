@@ -1,0 +1,29 @@
+body,
+html {
+	margin: 0;
+	overflow: hidden;
+}
+
+.app-container {
+	display: flex;
+	flex-direction: column;
+	overflow-x: hidden;
+	height: 100vh;
+}
+
+.horizontal-scroll-container {
+	display: flex;
+	overflow-x: auto;
+	scroll-snap-type: x mandatory;
+	scroll-behavior: smooth;
+}
+
+.page-container {
+	width: 100vw;
+	flex: 0 0 auto;
+	scroll-snap-align: start;
+}
+
+.component {
+	width: 100%;
+}
