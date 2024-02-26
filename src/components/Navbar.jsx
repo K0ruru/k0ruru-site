@@ -9,15 +9,34 @@ const Navbar = () => {
 		const aboutSection = document.getElementById("about");
 		const skillsSection = document.getElementById("skills");
 
+		const getOffset = (element) =>
+			element.getBoundingClientRect().top + window.scrollY;
+
 		const scrollPosition = window.scrollY + 50;
 
-		if (homeSection && scrollPosition < aboutSection.offsetTop) {
+		if (
+			homeSection &&
+			scrollPosition >= getOffset(homeSection) &&
+			scrollPosition < getOffset(aboutSection)
+		) {
 			setActiveLink("home");
-		} else if (aboutSection && scrollPosition >= aboutSection.offsetTop) {
+		} else if (
+			aboutSection &&
+			scrollPosition >= getOffset(aboutSection) &&
+			scrollPosition < getOffset(skillsSection)
+		) {
 			setActiveLink("about");
-		} else if (skillsSection && scrollPosition >= skillsSection.offsetTop) {
+		} else if (skillsSection && scrollPosition >= getOffset(skillsSection)) {
 			setActiveLink("skills");
+			addAnimationClassToSkills();
 		}
+	};
+
+	const addAnimationClassToSkills = () => {
+		const skills = document.querySelectorAll(".skills-container .skill");
+		skills.forEach((skill) => {
+			skill.classList.add("animate");
+		});
 	};
 
 	useEffect(() => {
@@ -25,13 +44,14 @@ const Navbar = () => {
 		return () => {
 			window.removeEventListener("scroll", handleScroll);
 		};
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
 	const scrollToSection = (sectionId) => {
 		const section = document.getElementById(sectionId);
 		if (section) {
 			window.scrollTo({
-				top: section.offsetTop + 50,
+				top: section.offsetTop - 50,
 				behavior: "smooth",
 			});
 		}
