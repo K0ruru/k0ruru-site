@@ -1,3 +1,107 @@
+@import "../assets/variables.scss";
+
 .about-content {
 	width: 100%;
+	height: 100vh;
+	display: flex;
+	flex-direction: row-reverse;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.about-text {
+	max-width: 50%;
+	text-align: end;
+
+	h1 {
+		font-weight: 700;
+		font-size: 3rem;
+		margin-bottom: 50px;
+
+		span {
+			text-decoration: underline 5px solid $accent-color;
+		}
+	}
+
+	p {
+		text-align: justify;
+		font-weight: 300;
+	}
+}
+
+.techstack {
+	width: 40%;
+
+	h3 {
+		font-family: "Kode Mono";
+		font-weight: 700;
+		font-size: 1.5rem;
+		margin-bottom: 70px;
+		text-align: center;
+	}
+}
+
+.tech-container {
+	display: flex;
+	align-items: center;
+	max-height: 100%;
+
+	.vl {
+		border-left: 2px solid $accent-color;
+		height: 200px;
+	}
+
+	.techs {
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+		align-items: center;
+		width: 55%;
+
+		.tech {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			align-items: center;
+			max-width: 8rem;
+			margin-right: 60px;
+			margin-bottom: 20px;
+
+			i {
+				font-size: 5rem;
+				transition: 0.23s all ease-in-out;
+			}
+
+			.devicon-mongodb-plain:hover {
+				color: #4db33d;
+			}
+
+			.devicon-express-original:hover {
+				color: #ec2424;
+			}
+
+			.devicon-react-original:hover {
+				color: #6fd0fd;
+			}
+
+			.devicon-nodejs-plain-wordmark:hover {
+				color: #3c873a;
+			}
+
+			p {
+				font-weight: 300;
+				font-size: 1rem;
+			}
+		}
+	}
+
+	.tech-stack-name {
+		width: 45%;
+		margin-left: 40px;
+
+		h1 {
+			text-align: center;
+			font-size: 3rem;
+		}
+	}
 }

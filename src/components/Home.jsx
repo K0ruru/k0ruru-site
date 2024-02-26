@@ -5,7 +5,7 @@ const Home = () => {
 	return (
 		<>
 			<div className="container">
-				<div className="home-content">
+				<div className="home-content" id="home">
 					<div className="home-text">
 						<h2>HEIYA ! IM K0RURU OR...</h2>
 						<h1>

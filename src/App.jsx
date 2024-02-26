@@ -9,7 +9,7 @@ function App() {
 		<>
 			<Navbar />
 			<Home />
-			<About />
+			<About id="about" />
 		</>
 	);
 }

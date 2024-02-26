@@ -1,6 +1,13 @@
 // Navbar.scss
 @import "../assets/variables.scss";
 
+nav {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	background-color: $primary-color;
+}
+
 .nav-content {
 	display: flex;
 	justify-content: space-between;
